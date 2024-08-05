@@ -13,7 +13,6 @@ def match_date(entity_value, sentence):
     found = None
     try:
         if not entity_value is np.datetime64('NaT'):
-            #print("date found",entity_value)
             entity_value = str(entity_value).split(" ")
             Entity_value =  datetime.strptime(entity_value[0],'%Y-%m-%d')
         for match in data_ragex_Pattern.finditer(sentence):
